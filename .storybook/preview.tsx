@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ThemeProvider } from "styled-components";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { Theme } from "../src/types";
@@ -14,7 +14,7 @@ export const parameters = {
 };
 
 const WithThemeProvider = (Story, context) => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = React.useState<Theme>("light");
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));

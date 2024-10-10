@@ -28,4 +28,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
     background-color: ${({ theme }) => theme.color};
     color: ${({ theme }) => theme.background};
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;

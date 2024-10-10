@@ -7,7 +7,10 @@ export const StyledInput = styled.input<{ $size?: Size }>`
   border-radius: 5px;
   font-size: 16px;
   outline: none;
-  /* width: 100%; */
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
   ${({ $size }) => {
     switch ($size) {

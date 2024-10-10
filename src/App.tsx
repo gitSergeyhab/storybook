@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { AppLayout } from "./components/app-layout";
 import { Button } from "./components/button";
 import { Input } from "./components/input";
@@ -13,19 +13,19 @@ function App() {
     setAntiValue(value.toLocaleUpperCase().split("").reverse().join("_"));
   }, [value, setAntiValue]);
 
+  const onButtonClick = () => setTheme(theme === "light" ? "dark" : "light");
+  const onInputChange = (event: ChangeEvent<HTMLInputElement>) =>
+    setValue(event.target.value);
+
   return (
     <AppLayout>
       <Button
         text={theme === "dark" ? "сменить на светлый" : "сменить на темный"}
         size="large"
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        onClick={onButtonClick}
       />
       <br />
-      <Input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        size="small"
-      />
+      <Input value={value} onChange={onInputChange} size="small" />
       <br />
       <div>{antiValue}</div>
     </AppLayout>

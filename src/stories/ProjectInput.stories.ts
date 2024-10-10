@@ -6,6 +6,14 @@ const meta = {
   title: "Project/Input",
   component: Input,
   parameters: {
+    docs: {
+      description: {
+        component: `    
+## Инпут
+
+### Совершенно замечательный инпут в одну строчку с описанием в двести.`,
+      },
+    },
     layout: "centered",
   },
   tags: ["autodocs"],
@@ -41,5 +49,6 @@ export const Disabled: Story = {
   args: {
     size: "medium",
     disabled: true,
+    value: "disabled medium Input with value",
   },
 };

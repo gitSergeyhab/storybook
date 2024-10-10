@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { Theme } from "../src/types";
 import { themes } from "../src/components/theme-provider/const";

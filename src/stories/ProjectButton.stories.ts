@@ -7,16 +7,30 @@ const meta = {
   component: Button,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: `
+##Кнопка        
+        
+<img src="/src/stories/assets/button.jpg" alt="Кнопка" width="400" style="margin: 0 auto; display: block;"/>
+`,
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {
     size: {
-      options: ["small", "medium", "large"],
+      description: "Размер кнопки - описание из сторис",
       control: { type: "select" },
+      options: ["small", "medium", "large"],
     },
     text: {
+      description: "текст кнопки - описание из сторис",
       type: "string",
       control: { type: "text" },
+    },
+    disabled: {
+      description: "Заблокирована кнопка - описание из сторис",
     },
   },
   args: { onClick: fn() },
